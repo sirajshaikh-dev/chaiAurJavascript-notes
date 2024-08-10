@@ -1,0 +1,48 @@
+<!--34.Edit and remove elements in DOM-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edi and remove elements</title>
+</head>
+<body style="background-color: rgb(0, 0, 0); color: antiquewhite;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    //Creating Elements
+    function addLangName(langName) {
+        const li= document.createElement('li');
+        li.innerHTML=`${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLangName("python")
+    addLangName("Typescript")
+
+    //Optimized way
+    function addOptiLanguage (langName){
+        const li= document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage("JAVA")
+
+    //Edit and replace
+    const secondLang= document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML("Mojo") // not optimized way
+    const newli= document.createElement('li')
+    newli.textContent="Mojo"
+    secondLang.replaceWith(newli) 
+
+    //edit 
+    const firstlang=document.querySelector("li:first-child")
+    firstlang.outerHTML='<li>Typescript</li>'
+
+    //remove
+    const lastLang= document.querySelector('li:last-child')
+    lastLang.remove()
+
+</script>
+</html>

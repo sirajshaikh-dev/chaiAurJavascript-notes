@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Learning</title>
+  <style>
+    .bg-black{
+      background-color: rgb(112, 100, 100);
+      color: aliceblue;
+      }
+  </style>
+</head>
+<body class="bg-black">
+  <div >
+    <h1 id='title' class="heading">Dom lerning</h1>
+    <p>Lorem ipsum dolor sit amet consectetu  /p>
+    <input type="password" value="">
+<ul>
+  <li class="list-item">ONe</li>
+  <li class="list-item">two</li>
+  <li class="list-item">three</li>
+  <li class="list-item">four </li>
+</ul>
+  </div>
+  
+  
+</body>
+</html>
+<script>
+  document.getElementById('title');
+  document.getElementById('title').id
+  document.getElementById('title').className
+  document.getElementById('title').getAttribute('id')
+  document.getElementById('title').setAttribute('class') // overwrite class 
+  document.getElementById('title').setAttribute('class', 'test') //   
+  
+  const title= document.getElementById('title');
+  title.style.backgroundColor= "green"
+  title.style.padding= "15px";
+
+  title.textContent
+  title.innerText
+  title.innerHTML
+
+  document.querySelector('h1')
+  document.querySelector('input[type="password"]')
+  document.querySelector('p:first-child ')
+
+  document.querySelector('ul')
+  const myul= document.querySelector('ul')
+  myul.querySelector("li")
+  const turnGreen=myul.querySelector("li")
+  turnGreen.style.backgroundColor="green"
+
+  document.querySelectorAll("li"); // it gives NodeList
+  const liList= document.querySelectorAll("li"); t
+  liList[0].style.color="green"
+  liList.forEach(function (l) {
+    l.style.backgroundColor= "blue"
+  })
+
+  document.getElementsByClassName('list-item')  //gives html collection
+  const classList=document.getElementsByClassName('list-item')
+  Array.from(classList) //converting to array
+  const convertedArray= Array.from(classList)  
+  convertedArray.forEach(function  (li) {
+    li.style.color="orange"
+  })
+
+</script>
+
+<!--Day 9: Learning DOM Manipulation
+1. Understanding the DOM
+What is the DOM?
+The Document Object Model (DOM) is a programming interface for web documents.
+It represents the page so that programs can change the document structure, style, and content.
+Basic Terminology:
+Nodes, Elements, Attributes, Text
+2. Accessing DOM Elements
+Selectors:
+getElementById()
+getElementsByClassName()
+getElementsByTagName()
+querySelector()
+querySelectorAll()
+Example:
+let element = document.getElementById('myElement');
+let elements = document.getElementsByClassName('myClass');
+
+3. Manipulating DOM Elements
+
+innerHTML
+innerText
+Changing Attributes:
+setAttribute()
+getAttribute()
+removeAttribute()
+Example:
+element.textContent = 'New Content';
+element.setAttribute('class', 'newClass');
+
+4. Styling Elements
+Inline Styles:
+style.property
+Adding/Removing Classes:
+classList.add()
+classList.remove()
+classList.toggle()
+Example:
+element.style.color = 'blue';
+element.classList.add('active');
+
+5. Creating and Removing Elements
+Creating Elements:
+document.createElement()
+appendChild()
+insertBefore()
+
+Removing Elements:
+removeChild()
+remove()
+Example:
+let newElement = document.createElement('div');
+document.body.appendChild(newElement);
+document.body.removeChild(newElement);
+
+6. Event Handling
+Adding Event Listeners:
+addEventListener()
+Event types: click, mouseover, keydown, etc.
+Removing Event Listeners:
+removeEventListener()
+Example:
+element.addEventListener('click', function() {
+  alert('Element clicked!');
+});
+
+7. Practice Projects
+Simple To-Do List:
+Add new items
+Mark items as completed
+Remove items
+Interactive Form:
+Show/hide sections based on user input
+Validate form inputs
+
+Practice Platforms:
+CodePen
+JSFiddle
+ --->
+
+ 

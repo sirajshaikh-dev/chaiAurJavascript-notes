@@ -1,0 +1,111 @@
+/*Array: Notes */
+/*
+// 1. Creating Arrays
+// Literal Notation:
+
+let fruits = ['Apple', 'Banana', 'Orange'];
+
+// Constructor:
+let fruits = new Array('Apple', 'Banana', 'Orange');
+
+// 2. Accessing Elements
+// -Use indices to access elements, with the first element being at index 0:
+
+console.log(fruits[0]); // 'Apple'
+
+// 3. Modifying Elements
+// - You can modify elements by assigning a new value to an index:
+ 
+fruits[1] = 'Grapes'; // ['Apple', 'Grapes', 'Orange']
+
+// 4. Array Methods
+// Adding Elements:
+// push(): Adds elements to the end.
+fruits.push('Mango'); // ['Apple', 'Grapes', 'Orange', 'Mango']
+
+// unshift(): Adds elements to the beginning.
+fruits.unshift('Pineapple'); // ['Pineapple', 'Apple', 'Grapes', 'Orange', 'Mango']
+
+// Removing Elements:
+// pop(): Removes the last element.
+fruits.pop(); // ['Pineapple', 'Apple', 'Grapes', 'Orange']
+
+// shift(): Removes the first element. 
+fruits.shift(); // ['Apple', 'Grapes', 'Orange']
+
+// Finding Elements:
+// indexOf(): Returns the first index of a value.
+let index = fruits.indexOf('Orange'); // 2
+
+// includes(): Checks if an array contains a value.
+let hasBanana = fruits.includes('Banana'); // false
+
+// Iterating Over Arrays:
+// for loop:
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+
+// for...of loop:
+ 
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+
+// forEach() method:
+fruits.forEach(fruit => console.log(fruit));
+
+// Array Methods for Transformation and Calculation:
+// map(): Creates a new array with the results of calling a function for every array element.
+ 
+let lengths = fruits.map(fruit => fruit.length);
+
+// filter(): Creates a new array with all elements that pass a test.
+let longFruits = fruits.filter(fruit => fruit.length > 5);
+
+// reduce(): Applies a function against an accumulator and each element to reduce the array to a single value.
+let totalLength = fruits.reduce((sum, fruit) => sum + fruit.length, 0);
+
+*/ 
+
+/*creating a 2-D array */
+// Creating a 2-D array (matrix)
+//The indices are zero-based, meaning the first row or column has an index of 0.
+const matrix = [
+    [1, 2, 3],    // First row
+    [4, 5, 6],    // Second row
+    [7, 8, 9]     // Third row
+];
+
+//Accessing Elements:
+//Accessing the element in the second row and third column
+console.log(matrix[1][2]); // Output: 6
+
+//Iterating Over a 2-D Array
+//You can use nested loops to iterate over all elements in a 2-D array. The outer loop iterates through the rows, while the inner loop iterates through the columns of each row.
+// Iterating over the 2-D array
+for (let i = 0; i < matrix.length; i++) {        // Loop through rows
+    for (let j = 0; j < matrix[i].length; j++) { // Loop through columns in each row
+        console.log(matrix[i][j]);
+    }
+}
+
+// Modifying Elements
+You can modify elements in a 2-D array using their indices.
+// Changing the element in the first row and second column
+matrix[0][1] = 10;
+console.log(matrix); // Output: [[1, 10, 3], [4, 5, 6], [7, 8, 9]]
+
+/*Practice Question: */  
+// iterating for loop over array 
+const shoppingCart = [
+    { itemName: "js Course", price: 2999 },
+    { itemName: "web dev Course", price: 4999 },
+    { itemName: "UI/UX Course", price: 2999 },
+    { itemName: "PYTHON Course", price: 8999 },
+];
+
+// Using "for" loop to iterate over the array
+for (let i = 0; i < shoppingCart.length; i++) {
+    console.log(shoppingCart[i]);
+}

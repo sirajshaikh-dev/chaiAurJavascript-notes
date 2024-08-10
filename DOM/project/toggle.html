@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add and Remove Class</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <p id="myParagraph">This is a paragraph that will be highlighted.</p>
+  <button id="toggleClassButton">Toggle Highlight</button>
+
+  <script  >
+    document.getElementById('toggleClassButton').addEventListener('click', function() {
+  let paragraph = document.getElementById('myParagraph');
+  
+  if (paragraph.classList.contains('highlight')) {
+    paragraph.classList.remove('highlight');
+  } else {
+    paragraph.classList.add('highlight');
+  }
+});
+
+  </script>
+</body>
+
+</html>
