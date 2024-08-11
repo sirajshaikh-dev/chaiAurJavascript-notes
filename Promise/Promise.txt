@@ -1,0 +1,83 @@
+1. Promises
+A Promise in JavaScript is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. A Promise can be in one of three states:
+
+Pending: Initial state, neither fulfilled nor rejected.
+Fulfilled: The operation completed successfully.
+Rejected: The operation failed.
+Here's a basic example:
+
+let myPromise = new Promise((resolve, reject) => {
+    let success = true;
+
+    if (success) {
+        resolve("The operation was successful!");
+    } else {
+        reject("The operation failed!");
+    }
+});
+
+myPromise.then(result => {
+    console.log(result); // "The operation was successful!"
+}).catch(error => {
+    console.error(error); // "The operation failed!"
+});
+
+2.Async-Await
+async/await is syntactic sugar built on top of Promises. It makes asynchronous code look and behave more like synchronous code, which is easier to read and understand.
+
+Async Function:
+An async function always returns a Promise. If the function returns a value, the Promise is resolved with that value. If the function throws an error, the Promise is rejected.
+
+async function myAsyncFunction() {
+    return "Hello, Async!";
+}
+
+myAsyncFunction().then(result => console.log(result)); // "Hello, Async!"
+Await:
+The await keyword can only be used inside async functions. It makes JavaScript wait until the Promise settles (either resolved or rejected) and returns its result.
+
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function runAsyncTask() {
+    console.log("Task started...");
+    await delay(2000); // Waits for 2 seconds
+    console.log("Task completed after 2 seconds!");
+}
+
+runAsyncTask();
+In this example, the delay function returns a Promise that resolves after 2 seconds. The await keyword pauses the execution of the runAsyncTask function until the Promise is resolved.
+
+Error Handling in Async-Await:
+You can use try...catch blocks to handle errors in async functions:
+
+async function getData() {
+    try {
+        let response = await fetch('https://api.example.com/data');
+        let data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+}
+
+getData();
+Combining Promises and Async-Await
+Sometimes, you might need to work with multiple asynchronous operations. Here's how you can handle that:
+
+async function fetchMultipleData() {
+    let [data1, data2] = await Promise.all([
+        fetch('https://api.example.com/data1').then(res => res.json()),
+        fetch('https://api.example.com/data2').then(res => res.json())
+    ]);
+
+    console.log(data1, data2);
+}
+
+fetchMultipleData();
+
+Key Points to Remember
+-Promises are a powerful way to handle asynchronous operations.
+-async/await makes it easier to write and understand asynchronous code.
+-Use try...catch for error handling in async functions.
