@@ -89,3 +89,46 @@ const priceToPay=shoppingCart.reduce((acc,item)=>(acc + item.price),0)
 // what if omit intial value: first element is used as intital value 
 //here, since the acc is not a number, this leads to error
 console.log(priceToPay)
+
+/*    */
+// UDEMY : complete web dev- hitesh choudhary
+
+/*48. Function, arrow function, THIS and context in javascript */
+
+/*1. Write a function named `makeTea` that takes one parameter, 
+`typeOfTea` and returns a string like 
+`"Making green Tea"` when called with `"green tea"`.
+Store the result in  a variable named `teaOrder` */
+
+function makeTea(typeOfTea) {
+    return (`Making ${typeOfTea}`)
+}
+
+let teaOrder= makeTea("greenTea;")
+console.log(teaOrder);
+
+/*2. Create a function name `orderTea` that takes one 
+parameter, `teaType`. Inside this function, create another 
+function named `confirmOrder` that returns a message like
+`"Oder confirmed for chai"`. 
+Call `confirmOrder` from within `orderTea` and return the result.*/
+
+function orderTea(teaType) {
+    function confirmOrder() {
+        return ('Order confirmed for chai')
+    }
+     return confirmOrder()
+ }
+
+let orderConfirmation= orderTea()
+// console.log(orderConfirmation);
+
+/*3. Write an arrow function named `calculateTotal` that
+takes two parameters: `price` and `quantity`. The
+function should return the total cost by multiplying the
+`price` and `quantity`. */
+
+const calculateTotal= (price,quantity)=> price*quantity;
+
+let totalCost= calculateTotal(2,5)
+// console.log(totalCost);
